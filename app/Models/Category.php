@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeDelivery\Model;
+namespace CodeDelivery\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
