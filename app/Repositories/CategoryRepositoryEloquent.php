@@ -18,6 +18,7 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
      *
      * @return string
      */
+    
     public function model()
     {
         return Category::class;
