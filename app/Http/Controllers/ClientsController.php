@@ -3,6 +3,7 @@
 namespace CodeDelivery\Http\Controllers;
 
 use CodeDelivery\Repositories\ClientRepository;
+use CodeDelivery\Services\ClientService;
 use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
@@ -13,12 +14,14 @@ class ClientsController extends Controller
 {
     
     private $repository;
+    private $clientService;
         
-        public function __construct(ClientRepository $repository){
-        
-            $this->repository = $repository;
-            
-        }
+    public function __construct(ClientRepository $repository, ClientService $clientService){
+
+        $this->repository = $repository;
+        $this->clientService = $clientService;
+
+    }
     
     
     public function index(ClientRepository $repository){
@@ -54,10 +57,8 @@ class ClientsController extends Controller
     
     public function update(AdminClientRequest $request, $id){
         
-        $client = $this->repository->find($id);
-        
         $data = $request->all();
-        $this->repository->update($data, $id);
+        $this->clientService->update($data, $id);
         
         return redirect()->route('admin.clients.index');
         

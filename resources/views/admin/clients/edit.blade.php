@@ -6,7 +6,7 @@
         
         @include('errors._check')
         
-        {!! Form::model($client, ['route'=>['admin.clients.update', $client->user->id]]) !!}
+        {!! Form::model($client, ['route'=>['admin.clients.update', $client->id]]) !!}
         
         @include('admin.clients._form')
         
