@@ -38,4 +38,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.checkrole', 'as'=>'admin.']
         Route::post('/store', ['as'=>'store', 'uses'=>'ClientsController@store']);
         Route::post('/update/{id}', ['as'=>'update', 'uses'=>'ClientsController@update']);
     });
+    
+    Route::group(['prefix'=>'orders', 'as'=>'orders.'], function () {
+        Route::get('', ['as'=>'index', 'uses'=>'OrdersController@index']);
+        Route::get('/edit/{id}', ['as'=>'edit', 'uses'=>'OrdersController@edit']);
+        Route::post('/update/{id}', ['as'=>'update', 'uses'=>'OrdersController@update']);
+    });
 });
