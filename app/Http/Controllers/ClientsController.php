@@ -41,7 +41,7 @@ class ClientsController extends Controller
     public function store(AdminClientRequest $request){//request sono i dati inseriti nel formulario
         
         $data = $request->all(); //dico di prenderli tutti
-        $this->repository->create($data); //dico di salvare un nuovo record
+        $this->clientService->create($data); //dico di salvare un nuovo record
         
         return redirect()->route('admin.clients.index');
         
