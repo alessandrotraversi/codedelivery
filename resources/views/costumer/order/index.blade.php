@@ -27,7 +27,7 @@
             </thead>
         </table>
         
-        {!! $cupoms->render() !!}
+        {!! $orders->render() !!}
 
     </div>
 

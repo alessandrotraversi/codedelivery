@@ -2,7 +2,7 @@
 
 namespace CodeDelivery\Http\Controllers;
 
-use CodeDelivery\Http\Controllers\Auth;
+use Auth;
 use CodeDelivery\Repositories\OrderRepository;
 use CodeDelivery\Repositories\UserRepository;
 use CodeDelivery\Repositories\ProductRepository;
@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 
 
 use CodeDelivery\Http\Requests;
-use CodeDelivery\Http\Requests\AdminCategoryRequest;
 use CodeDelivery\Http\Controllers\Controller;
 
 
