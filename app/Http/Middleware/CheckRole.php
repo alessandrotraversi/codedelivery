@@ -1,14 +1,9 @@
 <?php
-
 namespace CodeDelivery\Http\Middleware;
-
 use Closure;
 use Illuminate\Support\Facades\Auth;
-
 class CheckRole
 {
-    
-    
     /**
      * Handle an incoming request.
      *
@@ -16,18 +11,14 @@ class CheckRole
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $role)
     {
-        
-        if(!Auth::check()){ //se non è autenticato
+        if(!Auth::check()) {
             return redirect('/auth/login');
-        };
-        
-        if(Auth::user()->role <> 'admin'){
-            return redirect('/');
         }
-        
-        
+        if(Auth::user()->role <> $role) {
+            return redirect('/auth/login');
+        }
         return $next($request);
     }
 }
