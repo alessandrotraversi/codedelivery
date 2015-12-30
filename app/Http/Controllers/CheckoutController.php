@@ -2,16 +2,14 @@
 
 namespace CodeDelivery\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use CodeDelivery\Http\Requests;
 use CodeDelivery\Repositories\OrderRepository;
-use CodeDelivery\Repositories\UserRepository;
 use CodeDelivery\Repositories\ProductRepository;
+use CodeDelivery\Repositories\UserRepository;
 use CodeDelivery\Services\OrderService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-
-use CodeDelivery\Http\Requests;
-use CodeDelivery\Http\Controllers\Controller;
 
 
 class CheckoutController extends Controller
@@ -27,7 +25,7 @@ class CheckoutController extends Controller
         $this->repository = $repository;
         $this->userRepository = $userRepository;
         $this->productRepository = $productRepository;
-        $this->orderService = $service;
+        $this->service = $service;
 
     }
     
