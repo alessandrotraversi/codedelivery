@@ -59,4 +59,8 @@ Route::group(['prefix'=>'costumer', 'middleware'=>'auth.checkrole:client', 'as'=
     Route::get('/order', ['as'=>'order.index', 'uses'=>'CheckoutController@index']);
     Route::get('/order/create', ['as'=>'order.create', 'uses'=>'CheckoutController@create']);
     Route::post('/order/store', ['as'=>'order.store', 'uses'=>'CheckoutController@store']);
-});       
+});
+
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
