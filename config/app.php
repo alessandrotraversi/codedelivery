@@ -149,6 +149,8 @@ return [
         CodeDelivery\Providers\RouteServiceProvider::class,
         CodeDelivery\Providers\RepositoryServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
+        LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
         
 
     ],
@@ -201,6 +203,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
+        'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
 
     ],
 
