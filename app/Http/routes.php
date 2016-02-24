@@ -73,4 +73,5 @@ Route::group(['prefix'=>'api', 'middleware'=>'oauth', 'as'=>'api.'], function ()
             'total'=>10
         ];
     });
+    Route::get('/test', ['as'=>'test', 'uses'=>'CheckoutController@index']);
 });

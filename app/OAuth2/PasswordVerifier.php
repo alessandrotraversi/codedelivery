@@ -4,7 +4,7 @@
 namespace CodeDelivery\OAuth2;
 use Illuminate\Support\Facades\Auth;
 
-class PasswordVerify
+class PasswordVerifier
 {
     public function verify($username, $password)
     {
