@@ -66,7 +66,15 @@ Route::post('oauth/access_token', function() {
 });
 
 Route::group(['prefix'=>'api', 'middleware'=>'oauth', 'as'=>'api.'], function () {
-    Route::get('richiesta', function(){
+    Route::group(['prefix'=>'client', 'middleware'=>'oauth.checkrole:client', 'as'=>'client.'], function () {
+
+    });
+
+    Route::group(['prefix'=>'deliveryman', 'middleware'=>'oauth.checkrole:deliveryman', 'as'=>'deliveryman.'], function () {
+
+    });
+
+        Route::get('richiesta', function(){
         return[
             'id'=>1,
             'client'=>'Ale',
