@@ -2,7 +2,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class OAuthClientSeeder extends Seeder
+class OAuthTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
