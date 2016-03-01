@@ -62,5 +62,14 @@ class OrderService{
         }
 
     }
+    public function updateStauts($id,$idDeliveryman,$status){
+        $order = $this->orderRepository->getByIdAndDeliveryman($id,$idDeliveryman);
+        if($order instanceof Order){
+            $order->status = $status;
+            $order->save();
+            return $order;
+        }
+        return false;
+    }
 
 }
