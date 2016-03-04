@@ -13,7 +13,11 @@ use CodeDelivery\Models\User;
  */
 class UserRepositoryEloquent extends BaseRepository implements UserRepository
 {
-    
+
+    public function lists(){
+        return $this->model->lists('name','id');
+    }
+
     public function getDeliveryman(){
     
         return $this->model->where(['role'=>'deliveryman'])->lists('name', 'id');
