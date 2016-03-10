@@ -78,4 +78,9 @@ Route::group(['prefix'=>'api', 'middleware'=>'oauth', 'as'=>'api.'], function ()
 
     Route::get('/test', ['as'=>'test', 'uses'=>'CheckoutController@index']);
     Route::get('user/authenticated', ['as'=>'user.auth', 'uses'=>'UserController@authenticated']);
+
+    Route::get('authenticated', function(){
+        $id = \LucaDegasperi\OAuth2Server\Facades\Authorizer::getResourceOwnerId();
+        return \CodeDelivery\Models\User::find($id);
+    });
 });
