@@ -39,8 +39,9 @@ class OrderService{
         $items = $data['items'];
         unset($data['items']);
 
+        $data['total']= $total = 0;
         $order = $this->orderRepository->create($data);
-        $total = 0;
+
 
         foreach($items as $item){
             $item['price'] = $this->productRepository->find($item['product_id'])->price;
