@@ -1,10 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Traversi
+ * Date: 26/03/2016
+ * Time: 19:46
+ */
 
 namespace CodeDelivery\Http\Requests;
 
-use CodeDelivery\Http\Requests\Request;
 
-class AdminClientRequest extends Request
+class AdminUserRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +29,8 @@ class AdminClientRequest extends Request
     public function rules()
     {
         return [
-            'phone' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'zipcode' => 'required'
+            'name' => 'required',
+            'email' => 'required|email|unique:users'
         ];
     }
 }
