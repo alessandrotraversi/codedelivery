@@ -13,6 +13,7 @@ use CodeDelivery\Models\User;
  */
 class UserRepositoryEloquent extends BaseRepository implements UserRepository
 {
+    protected $skipPresenter = true;
 
     public function lists(){
         return $this->model->lists('name','id');
@@ -43,6 +44,6 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
 
     public function presenter()
     {
-        return \CodeDelivery\Presenters\OrderPresenter::class;
+        return \CodeDelivery\Presenters\UserPresenter::class;
     }
 }
