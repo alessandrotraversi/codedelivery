@@ -14,7 +14,7 @@ angular.module('starter.controllers',[])
                     $ionicPopup.alert({
                         title:'Attenzione',
                         template:'Login e/o password invalido'
-                    })
-            })
+                    });
+            });
         }
     }]);
